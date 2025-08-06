@@ -14,7 +14,38 @@
 
   let blockedSubreddits = [];
   let blockedUsers = [];
-
+  // chromium extension (storage)
+  /*
+  async function loadBlockedLists() {
+    const result = await chrome.storage.sync.get(['blockedSubreddits', 'blockedUsers']);
+    blockedSubreddits = result.blockedSubreddits || [];
+    blockedUsers = result.blockedUsers || [];
+  }
+  
+  async function saveBlockedLists() {
+    await chrome.storage.sync.set({
+      blockedSubreddits,
+      blockedUsers
+    });
+  }
+  */
+  
+  //firefox extension (storage)
+  /*
+  async function loadBlockedLists() {
+    const result = await browser.storage.sync.get(['blockedSubreddits', 'blockedUsers']);
+    blockedSubreddits = result.blockedSubreddits || [];
+    blockedUsers = result.blockedUsers || [];
+  }
+  
+  async function saveBlockedLists() {
+    await browser.storage.sync.set({
+      blockedSubreddits,
+      blockedUsers
+    });
+  }
+  */
+  
   function loadBlockedLists() {
     try {
       const subs = GM_getValue("blockedSubreddits", "[]");
