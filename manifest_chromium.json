@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "uRedditBlock",
+  "version": "1.0",
+  "description": "Lightning-fast subreddit & user blocking for Reddit.",
+  "author": "Berkay Gediz",
+  "homepage_url": "https://berkaygediz.net",
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": ["https://www.reddit.com/*"],
+      "js": ["script.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "host_permissions": ["https://www.reddit.com/*"],
+  "action": {
+    "default_title": "uRedditBlock",
+    "default_icon": {
+      "16": "icon.png",
+      "32": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
+  },
+  "icons": {
+    "16": "icon.png",
+    "32": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  }
+}
